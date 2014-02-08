@@ -1,0 +1,84 @@
+﻿@model Smatrves.Models.Site
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Site</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiteAdress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiteAdress)
+            @Html.ValidationMessageFor(model => model.SiteAdress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiteName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiteName)
+            @Html.ValidationMessageFor(model => model.SiteName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiteDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiteDescription)
+            @Html.ValidationMessageFor(model => model.SiteDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShowTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShowTime)
+            @Html.ValidationMessageFor(model => model.ShowTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiteBalance)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiteBalance)
+            @Html.ValidationMessageFor(model => model.SiteBalance)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShowPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShowPrice)
+            @Html.ValidationMessageFor(model => model.ShowPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OnlyUniqueIP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OnlyUniqueIP)
+            @Html.ValidationMessageFor(model => model.OnlyUniqueIP)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

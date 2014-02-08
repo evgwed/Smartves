@@ -1,0 +1,38 @@
+﻿@model Smatrves.Models.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdUser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

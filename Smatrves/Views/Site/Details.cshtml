@@ -1,0 +1,64 @@
+﻿@model Smatrves.Models.Site
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Site</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteAdress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteAdress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShowTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShowTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteBalance)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteBalance)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShowPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShowPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OnlyUniqueIP)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OnlyUniqueIP)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SiteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+﻿@model Smatrves.Models.Site
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Site</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteAdress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteAdress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShowTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShowTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteBalance)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteBalance)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShowPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShowPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OnlyUniqueIP)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OnlyUniqueIP)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
