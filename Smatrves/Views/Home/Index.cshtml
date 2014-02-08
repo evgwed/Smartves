@@ -3,5 +3,21 @@
 }
 
 <h2>Smartves</h2>
-@Html.ActionLink("Регистрация", "Registration")
-@Html.Partial("Login")
+@using Smatrves.Models.Helpers
+@if(UserHelper.GetUser(Session)==null)
+{
+    @Html.ActionLink("Регистрация", "Registration")
+    @Html.Partial("Login")
+    <p>
+        @Html.ActionLink("appLogin", "LoginApp", "Home",new {email = "evgwe33d@gmail.com", pass = "balda110149", r= 232},null)
+    </p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Sites", "Index", "Site")
+    </p>
+    <p>
+        @Html.ActionLink("ShowReports", "Index", "ShowReport")
+    </p>
+}

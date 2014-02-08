@@ -49,14 +49,20 @@ namespace Smatrves.Models
         public string Ava{get;set;}
         //Regdate Дата реистрации
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Regdate{get;set;}
         //DateLastEnter Дата последнего входа
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateLastEnter { get; set; }
         //Status Статус аккаунта: забанен, открыт, и т.д. [скрытая строка. если забанен, то появляется оповещение об этом]
         [Required]
         public StatusClient Status { get; set; }
         //DateofBirthDay Дата дня рождения, будем плюшки давать [скрыто / по желанию]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateofBirthDay { get; set; }
         //WMID Вмид [скрыто]
         public string WMID { get; set; }
@@ -95,5 +101,6 @@ namespace Smatrves.Models
         public UpgradeType Accupgrade { get; set; }
 
         public virtual ICollection<Site> Sites { get; set; }
+        public virtual ICollection<ShowReport> ShowReports { get; set; }
     }
 }

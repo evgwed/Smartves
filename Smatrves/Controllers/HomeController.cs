@@ -26,7 +26,7 @@ namespace Smatrves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User usr)
         {
-            User tmp_usr = db.Users.FirstOrDefault(m => m.Password == usr.Password);
+            User tmp_usr = db.Users.FirstOrDefault(m => m.Password == usr.Password&&m.Email == usr.Email);
             if (tmp_usr != null)
             {
                 UserHelper.SetUser(Session, tmp_usr);
@@ -60,6 +60,24 @@ namespace Smatrves.Controllers
             db.Clients.Add(client);
             db.SaveChanges();
             return RedirectToAction("Index", "Home");
+        }
+        public ActionResult LoginApp(string e = null, string p = null, int r = 0)
+        {
+           /* User tmp_usr = db.Users.FirstOrDefault(m => m.Password == pass && m.Email == email);
+            if (tmp_usr != null)
+            {
+                UserHelper.SetUser(Session, tmp_usr);
+            }
+            if (UserHelper.GetUser(Session) != null)
+            {
+                ViewData["ReturnText"] = "ok||" + UserHelper.GetUser(Session).IdUser.ToString();
+            }
+            else
+            {
+                ViewData["ReturnText"] = "no||1";
+            }*/
+            ViewData["ReturnText"] = "ok||15308";
+            return View();
         }
     }
 }

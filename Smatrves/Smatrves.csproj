@@ -128,6 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ShowReportController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -232,6 +233,13 @@
     <Content Include="Views\Site\Create.cshtml" />
     <Content Include="Views\Site\Edit.cshtml" />
     <Content Include="Views\Site\Delete.cshtml" />
+    <Content Include="Views\ShowReport\Index.cshtml" />
+    <Content Include="Views\ShowReport\Details.cshtml" />
+    <Content Include="Views\ShowReport\Create.cshtml" />
+    <Content Include="Views\ShowReport\Edit.cshtml" />
+    <Content Include="Views\ShowReport\Delete.cshtml" />
+    <Content Include="Views\Home\LoginApp.cshtml" />
+    <Content Include="Views\Site\GetSiteApp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

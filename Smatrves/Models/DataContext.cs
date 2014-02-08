@@ -12,13 +12,13 @@ namespace Smatrves.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Site> Sites { get; set; }
+        public DbSet<ShowReport> ShowReports { get; set; }
         public DataContext() : base("DefaultConnection") { }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Admin>().ToTable("Admins");
             modelBuilder.Entity<Client>().ToTable("Clients");
-            modelBuilder.Entity<Site>().ToTable("Sites");
         }
     }
 }

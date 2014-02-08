@@ -1,0 +1,29 @@
+﻿@model Smatrves.Models.ShowReport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ShowReport</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateTimeShow)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTimeShow)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IpViewer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IpViewer)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ReportId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

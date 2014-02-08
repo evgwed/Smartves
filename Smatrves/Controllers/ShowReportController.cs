@@ -9,33 +9,33 @@ using Smatrves.Models;
 
 namespace Smatrves.Controllers
 {
-    public class SiteController : Controller
+    public class ShowReportController : Controller
     {
         private DataContext db = new DataContext();
 
         //
-        // GET: /Site/
+        // GET: /ShowReport/
 
         public ActionResult Index()
         {
-            return View(db.Sites.ToList());
+            return View(db.ShowReports.ToList());
         }
 
         //
-        // GET: /Site/Details/5
+        // GET: /ShowReport/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Site site = db.Sites.Find(id);
-            if (site == null)
+            ShowReport showreport = db.ShowReports.Find(id);
+            if (showreport == null)
             {
                 return HttpNotFound();
             }
-            return View(site);
+            return View(showreport);
         }
 
         //
-        // GET: /Site/Create
+        // GET: /ShowReport/Create
 
         public ActionResult Create()
         {
@@ -43,80 +43,75 @@ namespace Smatrves.Controllers
         }
 
         //
-        // POST: /Site/Create
+        // POST: /ShowReport/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Site site)
+        public ActionResult Create(ShowReport showreport)
         {
             if (ModelState.IsValid)
             {
-                db.Sites.Add(site);
+                db.ShowReports.Add(showreport);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(site);
+            return View(showreport);
         }
 
         //
-        // GET: /Site/Edit/5
+        // GET: /ShowReport/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Site site = db.Sites.Find(id);
-            if (site == null)
+            ShowReport showreport = db.ShowReports.Find(id);
+            if (showreport == null)
             {
                 return HttpNotFound();
             }
-            return View(site);
+            return View(showreport);
         }
 
         //
-        // POST: /Site/Edit/5
+        // POST: /ShowReport/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Site site)
+        public ActionResult Edit(ShowReport showreport)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(site).State = EntityState.Modified;
+                db.Entry(showreport).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(site);
+            return View(showreport);
         }
 
         //
-        // GET: /Site/Delete/5
+        // GET: /ShowReport/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Site site = db.Sites.Find(id);
-            if (site == null)
+            ShowReport showreport = db.ShowReports.Find(id);
+            if (showreport == null)
             {
                 return HttpNotFound();
             }
-            return View(site);
+            return View(showreport);
         }
 
         //
-        // POST: /Site/Delete/5
+        // POST: /ShowReport/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Site site = db.Sites.Find(id);
-            db.Sites.Remove(site);
+            ShowReport showreport = db.ShowReports.Find(id);
+            db.ShowReports.Remove(showreport);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-        public ActionResult GetSiteApp()
-        {
-            ViewData["ReturnText"] = "OK||8465||http://dengihalyava.blogspot.ru/||60||http://yandex.ru/yandsearch?text=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0||0||f1f1c572ed61256af41e7ce4f379d0f9||1||59||5180092||0||";
-            return View();
         }
 
         protected override void Dispose(bool disposing)
