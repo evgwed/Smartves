@@ -115,7 +115,19 @@ namespace Smatrves.Controllers
         }
         public ActionResult GetSiteApp()
         {
-            ViewData["ReturnText"] = "OK||8465||http://dengihalyava.blogspot.ru/||60||http://yandex.ru/yandsearch?text=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0||0||f1f1c572ed61256af41e7ce4f379d0f9||1||59||5180092||0||";
+            if (Session["bla"] == null)
+                Session["bla"] = 1;
+            List<Site> sites = db.Sites.ToList();
+            Random randosha = new Random();
+            int site_count = sites.Count;
+            int index_view = randosha.Next(0, site_count - 1);
+            Site view_site = sites[index_view];
+            ViewData["ReturnText"] = "OK||"+view_site.SiteID+"||"+view_site.SiteAdress+"||"+view_site.ShowTime+"||"+view_site.Referrer+"||0||f1f1c572ed61256af41e7ce4f379d0f9||" + Session["bla"] + "||"+db.Sites.Count()+"||5180092||0||";
+            if ((int)Session["bla"] == site_count)
+            {
+                ViewData["ReturnText"] = "ERR||Ожидание просмотра следующего сайта||0||300||0||0||0||0||0||0||0||";
+            }
+            Session["bla"] = (int)Session["bla"] + 1;
             return View();
         }
 

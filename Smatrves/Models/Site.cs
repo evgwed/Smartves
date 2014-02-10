@@ -14,6 +14,10 @@ namespace Smatrves.Models
         [Required]
         [Display(Name = "Адрес сайта")]
         public string SiteAdress { get; set; }
+        //Referrer
+        [Required]
+        [Display(Name = "Referrer")]
+        public string Referrer { get; set; }
         //Название сайта
         [Required]
         [Display(Name = "Название сайта")]

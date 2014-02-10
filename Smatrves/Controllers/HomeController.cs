@@ -17,7 +17,7 @@ namespace Smatrves.Controllers
         {
             if (db.Admins.Count() == 0)
             {
-                db.Admins.Add(new Admin() { Name = "Прохоров Евгений", Email = "evgwed@gmail.com", Login = "evgwed", Password = "balda110149" });
+                db.Admins.Add(new Admin() { Name = "Прохоров Евгений", Email = "evgwed@gmail.com", Login = "evgwed", Password = "123" });
                 db.SaveChanges();
             }
             return View();
@@ -26,7 +26,7 @@ namespace Smatrves.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User usr)
         {
-            User tmp_usr = db.Users.FirstOrDefault(m => m.Password == usr.Password&&m.Email == usr.Email);
+            User tmp_usr = db.Users.FirstOrDefault(m => m.Password == usr.Password&&m.Login == usr.Login);
             if (tmp_usr != null)
             {
                 UserHelper.SetUser(Session, tmp_usr);
@@ -61,12 +61,16 @@ namespace Smatrves.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
-        public ActionResult LoginApp(string e = null, string p = null, int r = 0)
+        public ActionResult LoginApp(string l = null, string p = null, int r = 0)
         {
-           /* User tmp_usr = db.Users.FirstOrDefault(m => m.Password == pass && m.Email == email);
+            User tmp_usr = db.Users.FirstOrDefault(m => m.Password == p && m.Login == l);
             if (tmp_usr != null)
             {
                 UserHelper.SetUser(Session, tmp_usr);
+            }
+            else
+            {
+                UserHelper.SetUser(Session, null);
             }
             if (UserHelper.GetUser(Session) != null)
             {
@@ -75,8 +79,7 @@ namespace Smatrves.Controllers
             else
             {
                 ViewData["ReturnText"] = "no||1";
-            }*/
-            ViewData["ReturnText"] = "ok||15308";
+            }
             return View();
         }
     }

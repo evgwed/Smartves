@@ -12,13 +12,20 @@
 
     <fieldset>
         <legend>Site</legend>
-
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.SiteAdress)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.SiteAdress)
             @Html.ValidationMessageFor(model => model.SiteAdress)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Referrer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Referrer)
+            @Html.ValidationMessageFor(model => model.Referrer)
         </div>
 
         <div class="editor-label">
